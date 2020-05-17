@@ -1,1 +1,13 @@
-include ':app', ':annotation', ':codegen'
+pluginManagement {
+    repositories {
+        jcenter()
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        gradlePluginPortal()
+        mavenLocal()
+    }
+}
+
+include ':testmod', ':ap', ":plugin"

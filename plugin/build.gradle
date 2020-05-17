@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id "maven-publish"
+    id 'java-gradle-plugin'
+    id "org.jetbrains.kotlin.jvm" version "1.3.72"
+}
+
+group 'fudge'
+version shared_version
+
+archivesBaseName = "autofabric"
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72"
+}
+
+
+gradlePlugin {
+    plugins {
+        autoFabricPlugin {
+            id = 'fudge.autofabric'
+            implementationClass = 'fudge.AutoFabricPlugin'
+        }
+    }
+}
+
+processResources {
+    inputs.property "version", shared_version
+    from(sourceSets.main.resources.srcDirs) {
+        include "version.txt"
+        expand "version": shared_version
+    }
+}

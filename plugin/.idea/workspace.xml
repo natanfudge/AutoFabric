@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fd974a89-b9bb-425f-b084-7494be690444" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../codegen/src/main/java/fudge/Entrypoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../codegen/src/main/java/fudge/EntrypointMetadataGenerator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../codegen/src/main/resources/META-INF/gradle/incremental.annotation.processors" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../codegen/src/main/resources/META-INF/services/javax.annotation.processing.Processor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/src/main/java/net/fabricmc/example/ExampleMod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/src/main/java/net/fabricmc/example/mixin/ExampleMixin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/src/main/resources/assets/modid/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/src/main/resources/fabric.mod.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testmod/src/main/resources/modid.mixins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../annotation/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../annotation/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../annotation/src/main/java/io/navendra/annotation/GreetingGenerator.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/androidTest/java/io/navendra/merryannotation/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/io/navendra/merryannotation/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/test/java/io/navendra/merryannotation/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codegen/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../codegen/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codegen/src/main/java/io/navendra/codegen/FileGenerator.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codegen/src/main/java/io/navendra/codegen/simplePoet/KotlinClassBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KonanWorkspace">
+    <executables />
+  </component>
+  <component name="ProjectId" id="1c37gp4q7eVYWoEmTCY6lYkdAZu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mods/fabricated-energistics" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd974a89-b9bb-425f-b084-7494be690444" name="Default Changelist" comment="" />
+      <created>1589745536892</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589745536892</updated>
+      <workItem from="1589745543452" duration="54000" />
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,27 +1,37 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.3.11'
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+    ext.kotlin_version = '1.3.72'
 }
 
 allprojects {
     repositories {
-        google()
-        jcenter()
+        mavenCentral()
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+//Properties properties = new Properties()
+//File propertiesFile = new File('gradle.properties')
+//propertiesFile.withInputStream {
+//    properties.load(it)
+//}
+//properties.put("total_version", total_version)
+//
+//
+//task updateTemplate(type: Copy) {
+//    group = "template"
+//    description = "Switches out variables like \$total_version in .template.md files, and copies the results into .md files."
+//    from(rootDir)
+//    include("**/*.template.md")
+//    filesMatching("**/*.template.md") {
+//        def extensionLength = ".template.md".length()
+//
+//        name = sourceName.substring(0, sourceName.length() - extensionLength) + ".md"
+//        expand(properties)
+//    }
+//    destinationDir = rootDir
+//}
+
+//processResources {
+//
+//}
