@@ -9,7 +9,6 @@ import javax.lang.model.element.TypeElement
 import javax.tools.Diagnostic
 import javax.tools.StandardLocation
 
-//TODO: remember to modify services/ and gradle/ when changing the processor name
 
 @SupportedSourceVersion(SourceVersion.RELEASE_8) // to support Java 8
 @SupportedOptions(EntrypointMetadataGenerator.KAPT_KOTLIN_GENERATED_OPTION_NAME)

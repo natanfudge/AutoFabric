@@ -1,7 +1,7 @@
 plugins {
     id "java"
     id "maven-publish"
-    id "org.jetbrains.kotlin.jvm" version "1.3.72"
+    id "org.jetbrains.kotlin.jvm"
 }
 
 group 'io.github.fudge'
@@ -13,11 +13,14 @@ dependencies {
 sourceCompatibility = "8"
 targetCompatibility = "8"
 
+java {
+    withSourcesJar()
+}
 publishing {
     publications {
         mavenJava(MavenPublication) {
 //            artifact jar
-//            artifactId = archivesBaseName
+            artifactId = archivesBaseName
 
             from project.components.java
         }

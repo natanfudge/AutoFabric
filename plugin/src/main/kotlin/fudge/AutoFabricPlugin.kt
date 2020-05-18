@@ -1,8 +1,7 @@
 package fudge
 
 import groovy.json.JsonBuilder
-import groovy.json.JsonSlurper
-import org.apache.groovy.json.internal.LazyMap
+import groovy.json.JsonSlurperClassic
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginConvention
@@ -21,7 +20,7 @@ class AutoFabricPlugin : Plugin<Project> {
     }
 }
 
-private fun getVersion(): String = AutoFabricPlugin::class.java.classLoader.getResource("version.txt").readText()
+private fun getVersion(): String = AutoFabricPlugin::class.java.classLoader.getResource("version.txt")!!.readText()
 
 class ProjectContext(private val project: Project) {
     fun apply() {
@@ -45,13 +44,10 @@ class ProjectContext(private val project: Project) {
                 sourceSet.annotationProcessorConfigurationName,
                 "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72"
             )
-            project.dependencies.add(
-                sourceSet.annotationProcessorConfigurationName,
-                "org.codehaus.groovy:groovy-all:2.4.15"
-            )
         }
     }
 
+    @Suppress("UNCHECKED_CAST")
     private fun insertEntrypoints() {
         for (sourceSet in getSourceSets()) {
             val entrypointsDir = Paths.get(
@@ -66,27 +62,32 @@ class ProjectContext(private val project: Project) {
                 warn("Could not find fabric.mod.json that is expected to be at $fabricModJson")
                 return
             }
-            //TODo: switch to kotlinx serialization
-            val json = JsonSlurper().parseText(fabricModJson.readText())
-            if (json !is LazyMap) {
+
+            val json = JsonSlurperClassic().parseText(fabricModJson.readText())
+
+            json as? HashMap<String, HashMap<String, List<String>>> ?: run {
                 warn("fabric.mod.json at $fabricModJson is not a json map and cannot be parsed")
+                return
+            }
+
+            val entrypoints = json["entrypoints"] ?: run {
+                warn("Could not find entrypoints field in fabric.mod.json at $fabricModJson")
                 return
             }
 
             entrypointsDir.toFile().listFiles()!!.forEach {
                 val key = it.readText()
                 val value = it.name
-                if (json.containsKey(key)) {
-                    val entrypointList = json[key]
+                if (entrypoints.containsKey(key)) {
+                    val entrypointList = entrypoints[key]
                     if (entrypointList !is MutableList<*>) {
                         warn("Value of $key is unexpectedly not a list")
                         return
                     }
-                    @Suppress("UNCHECKED_CAST")
                     entrypointList as MutableList<String>
                     entrypointList.add(value)
                 } else {
-                    json[key] = listOf(value)
+                    entrypoints[key] = listOf(value)
                 }
             }
 
