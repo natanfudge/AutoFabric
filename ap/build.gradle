@@ -2,6 +2,7 @@ plugins {
     id "java"
     id "maven-publish"
     id "org.jetbrains.kotlin.jvm"
+    id "com.jfrog.bintray" version "1.8.5"
 }
 
 group 'io.github.fudge'
@@ -19,10 +20,36 @@ java {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-//            artifact jar
             artifactId = archivesBaseName
 
             from project.components.java
+
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'Automates Entrypoints')
+                root.appendNode('name', 'AutoFabric-AP')
+                root.appendNode('url', "https://github.com/natanfudge/AutoFabric")
+//                root.children().last() + pomConfig
+            }
+        }
+
+
+    }
+}
+
+bintray {
+    user = project.hasProperty('bintray_user') ? project.property('bintray_user') : ""
+    key = project.hasProperty('bintray_api_key') ? project.property('bintray_api_key') : ""
+    publications = ["mavenJava"]
+    publish = true //[Default: false] Whether version should be auto published after an upload
+    pkg {
+        repo = "libs"
+        name = "AutoFabric-AP"
+        licenses = ["mit"]
+        version {
+            name = shared_version
+            released = new Date()
         }
     }
+
 }

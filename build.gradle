@@ -18,6 +18,13 @@ task publishAutoFabricToMavenLocal {
     dependsOn("plugin:publishToMavenLocal")
 }
 
+task publishAutoFabric {
+    group = "AutoFabric"
+    dependsOn("ap:bintrayUpload")
+    dependsOn("plugin:publishPlugins")
+    dependsOn("updateTemplate")
+}
+
 
 task updateTemplate(type: Copy) {
     group = "template"
