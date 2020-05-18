@@ -15,7 +15,7 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-    mavenLocal()
+    maven{url = "https://dl.bintray.com/natanfudge/libs"}
 }
 
 dependencies {
