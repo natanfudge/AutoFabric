@@ -16,8 +16,16 @@ Add AutoFabric as a gradle plugin:
 ```groovy
 plugins {
     // [...]
-    id "fudge.autofabric" version "1.0.0-rc4"
+    id "fudge.autofabric" version "1.0.0-rc6"
 }
 ```
 Despite being quite a complex arrangement, involving a Gradle plugin, annotation processor, and a compile-time dependency, you only need to add the plugin. Magic!
  
+If you're using Kotlin, don't forget to add `kapt` to your project. The AutoFabric plugin will handle the rest.
+```groovy
+plugins {
+    // [...]
+    id "org.jetbrains.kotlin.jvm" version "1.3.72"
+    id "org.jetbrains.kotlin.kapt" version "1.3.72"
+}
+```
