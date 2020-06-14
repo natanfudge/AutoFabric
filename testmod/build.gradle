@@ -1,10 +1,10 @@
-
-
 plugins {
-    id 'fabric-loom' version '0.4-SNAPSHOT'
+    id 'fabric-loom' version '0.4.local'
     id 'maven-publish'
     id "com.dorongold.task-tree" version "1.5"
-    id "fudge.autofabric" version "1.0.0-rc2"
+    id "org.jetbrains.kotlin.jvm" version "1.3.72"
+    id "org.jetbrains.kotlin.kapt" version "1.3.72"
+    id "fudge.autofabric" version "1.0.0-rc5"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -15,7 +15,9 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-    maven{url = "https://dl.bintray.com/natanfudge/libs"}
+    maven { url = "https://dl.bintray.com/natanfudge/libs" }
+    mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
@@ -26,6 +28,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 
@@ -79,5 +82,15 @@ publishing {
     repositories {
         // uncomment to publish to the local maven
         // mavenLocal()
+    }
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
