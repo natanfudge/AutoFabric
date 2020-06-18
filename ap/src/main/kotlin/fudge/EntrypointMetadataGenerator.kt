@@ -5,16 +5,15 @@ import javax.annotation.processing.RoundEnvironment
 import javax.annotation.processing.SupportedOptions
 import javax.annotation.processing.SupportedSourceVersion
 import javax.lang.model.SourceVersion
-import javax.lang.model.element.Element
-import javax.lang.model.element.ExecutableElement
-import javax.lang.model.element.TypeElement
-import javax.lang.model.element.VariableElement
+import javax.lang.model.element.*
 import javax.tools.Diagnostic
 import javax.tools.StandardLocation
 
 // :: is not valid as a file name
 private const val FieldMethodSeparator = "___"
 private const val ObjectInstanceName = "INSTANCE"
+
+private val objectInstanceModifiers = listOf(Modifier.STATIC, Modifier.FINAL, Modifier.PUBLIC)
 
 @SupportedSourceVersion(SourceVersion.RELEASE_8) // to support Java 8
 @SupportedOptions(EntrypointMetadataGenerator.KAPT_KOTLIN_GENERATED_OPTION_NAME)
@@ -36,7 +35,10 @@ class EntrypointMetadataGenerator : AbstractProcessor() {
             val entrypointReceiver = when (element) {
                 is TypeElement -> {
                     val objectInstance = element.enclosedElements
-                        .find { it is VariableElement && it.simpleName.toString() == ObjectInstanceName }
+                        .find {
+                            it is VariableElement && it.simpleName.toString() == ObjectInstanceName
+                                    && it.asType() == element.asType() && it.modifiers.containsAll(objectInstanceModifiers)
+                        }
                     if (objectInstance != null) element.qualifiedName.toString() + FieldMethodSeparator + objectInstance.simpleName
                     else element.qualifiedName
                 }

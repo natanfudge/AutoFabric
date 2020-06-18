@@ -12,3 +12,6 @@ Released
   You can do the same for Kotlin top-level methods.
 - You can now place `@Entrypoints` on Kotlin `object`s, and the generated INSTANCE will be used for the entrypoint(s). The Kotlin language adapter is not required.
 - Fixed a gradle plugin exception when having 2 or more auto entrypoints on a key when there are no manual entrypoints for that key.
+
+### 1.1.1
+- Made the handling of objects a bit more precise
