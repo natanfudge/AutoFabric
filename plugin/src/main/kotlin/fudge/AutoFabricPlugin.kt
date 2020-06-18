@@ -15,7 +15,12 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 
-//TODO: work for kapt
+//TODO:
+// 1. Fix java -> kotlin, out/* .gitignore
+// 2. Allow multiple values in @Entrypoint
+// 3. Create entrypoints field if it does exist
+// 4. Allow entrypoint on fields and methods
+// 5. Allow entrypoints on objects
 
 class AutoFabricPlugin : Plugin<Project> {
     override fun apply(project: Project) {

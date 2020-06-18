@@ -14,8 +14,9 @@ import java.lang.annotation.Target;
 public @interface Entrypoint {
     /**
      * The entry point type that will be inserted. Common entrypoints are MAIN, CLIENT, and SERVER.
+     * May accept multiple values, in that case the class must implement multiple interfaces, one for each value.
      */
-    String value();
+    String[] value();
 
     /**
      * Will be run first. For classes implementing ModInitializer.

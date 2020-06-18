@@ -2,7 +2,7 @@
 
 Currently, AutoFabric has one simple feature:
 ```java
-@EntryPoint("main")
+@Entrypoint("main")
 class MyMod implements ModInitializer {
  // [...]
 }
